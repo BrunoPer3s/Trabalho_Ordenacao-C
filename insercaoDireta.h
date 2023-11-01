@@ -1,0 +1,1 @@
+void insercaoDireta(int *v, int tam);

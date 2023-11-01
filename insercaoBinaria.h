@@ -1,0 +1,1 @@
+void insercaoBinaria(int *v, int tam);
