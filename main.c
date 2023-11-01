@@ -4,6 +4,7 @@
 #include "imprime.h"
 #include "insercaoBinaria.h"
 #include "insercaoDireta.h"
+#include "shellsort.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
@@ -23,15 +24,15 @@ int main() {
 
   LeArquivo(V, tam);
 
-  imprime(V, tam);
-
   insercaoDireta(V, tam);
 
   LeArquivo(V, tam);
 
-  imprime(V, tam);
-
   insercaoBinaria(V, tam);
+
+  LeArquivo(V, tam);
+
+  shellsort(V, tam);
 
   // imprime(V, tam);
   /*for (int i = 0; i < tam; i++) {
