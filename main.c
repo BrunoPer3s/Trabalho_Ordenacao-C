@@ -1,6 +1,7 @@
 #include "arquivo.h"
 #include "bolha.h"
 #include "gera.h"
+#include "heapSort.h"
 #include "imprime.h"
 #include "insercaoBinaria.h"
 #include "insercaoDireta.h"
@@ -38,6 +39,10 @@ int main() {
   LeArquivo(V, tam);
 
   selecao(V, tam);
+
+  LeArquivo(V, tam);
+
+  heapSort(V, tam);
 
   // imprime(V, tam);
   /*for (int i = 0; i < tam; i++) {

@@ -99,6 +99,6 @@
 99
 100
 
-Tempo decorrido: 0.000005
+Tempo decorrido: 0.000007
 Comparações: 462
 Trocas: 462
