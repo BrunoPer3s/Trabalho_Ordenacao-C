@@ -4,6 +4,7 @@
 #include "imprime.h"
 #include "insercaoBinaria.h"
 #include "insercaoDireta.h"
+#include "selecao.h"
 #include "shellsort.h"
 #include <stdio.h>
 #include <stdlib.h>
@@ -33,6 +34,10 @@ int main() {
   LeArquivo(V, tam);
 
   shellsort(V, tam);
+
+  LeArquivo(V, tam);
+
+  selecao(V, tam);
 
   // imprime(V, tam);
   /*for (int i = 0; i < tam; i++) {

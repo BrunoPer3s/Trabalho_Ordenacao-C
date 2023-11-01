@@ -1,0 +1,1 @@
+void selecao(int *v, int tam);

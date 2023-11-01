@@ -1,6 +1,6 @@
 all: compila executa
-compila: main.o arquivo.o bolha.o gera.o imprime.o insercaoDireta.o insercaoBinaria.o shellsort.o
-	gcc main.o arquivo.o bolha.o gera.o imprime.o insercaoDireta.o insercaoBinaria.o shellsort.o -o prog
+compila: main.o arquivo.o bolha.o gera.o imprime.o insercaoDireta.o insercaoBinaria.o shellsort.o selecao.o
+	gcc main.o arquivo.o bolha.o gera.o imprime.o insercaoDireta.o insercaoBinaria.o shellsort.o selecao.o -o prog
 main.o: main.c
 	gcc -c main.c
 arquivo.o: arquivo.c
@@ -17,7 +17,9 @@ insercaoBinaria.o: insercaoBinaria.c
 	gcc -c insercaoBinaria.c
 shellsort.o: shellsort.c
 	gcc -c shellsort.c
+selecao.o: selecao.c
+	gcc -c selecao.c
 executa:
 	./prog
 clean:
-	rm main.o arquivo.o bolha.o gera.o imprime.o insercaoDireta.o insercaoBinaria.o shellsort.o prog
+	rm main.o arquivo.o bolha.o gera.o imprime.o insercaoDireta.o insercaoBinaria.o shellsort.o selecao.o prog
