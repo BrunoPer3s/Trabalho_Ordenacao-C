@@ -1,12 +1,12 @@
-#include "arquivo.h"
-#include "bolha.h"
-#include "gera.h"
-#include "heapSort.h"
-#include "imprime.h"
-#include "insercaoBinaria.h"
-#include "insercaoDireta.h"
-#include "selecao.h"
-#include "shellsort.h"
+#include "./Funcoes/Arquivo/arquivo.h"
+#include "./Funcoes/Binaria/insercaoBinaria.h"
+#include "./Funcoes/Bolha/bolha.h"
+#include "./Funcoes/Direta/insercaoDireta.h"
+#include "./Funcoes/Gera/gera.h"
+#include "./Funcoes/HeapSort/heapSort.h"
+#include "./Funcoes/Imprime/imprime.h"
+#include "./Funcoes/Selecao/selecao.h"
+#include "./Funcoes/ShellSort/shellsort.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
@@ -14,13 +14,14 @@
 int main() {
   int tam = 100;
   int V[tam];
-  LeArquivo(V, tam);
 
   geraVetorOrdenado(V, tam);
 
   geraVetorInvOrdenado(V, tam);
 
   geraVetorAleatorio(V, tam);
+
+  LeArquivo(V, tam);
 
   ordenaBolha(V, tam);
 

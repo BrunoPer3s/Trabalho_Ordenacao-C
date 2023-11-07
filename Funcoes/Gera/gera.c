@@ -1,4 +1,4 @@
-#include "arquivo.h"
+#include "../Arquivo/arquivo.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>

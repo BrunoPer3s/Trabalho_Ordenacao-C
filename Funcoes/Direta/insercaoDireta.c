@@ -1,35 +1,34 @@
-#include "arquivo.h"
+#include "../Arquivo/arquivo.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
 
-void selecao(int *v, int tam) {
+void insercaoDireta(int *v, int tam) {
 
   clock_t inicio, fim;
   double tempo_decorrido;
   inicio = clock();
 
+  int aux;
   int comparacoes = 0;
   int trocas = 0;
-  int menor;
-
-  for (int i = 0; i < tam - 1; i++) {
-    menor = i;
-    for (int j = i + 1; j < tam; j++) {
+  int j;
+  for (int i = 1; i < tam; i++) {
+    aux = v[i];
+    j = i - 1;
+    while (j >= 0 && aux < v[j]) {
       comparacoes++;
-      if (v[j] < v[menor])
-        menor = j;
+      v[j + 1] = v[j];
+      j--;
     }
-    if (i != menor) {
-      int aux = v[i];
-      v[i] = v[menor];
-      v[menor] = aux;
+    if (j != (i - 1)) {
       trocas++;
+      v[j + 1] = aux;
     }
   }
 
   char nome[50];
-  sprintf(nome, "Selecao%d.txt", tam);
+  sprintf(nome, "InsercaoDireta%d.txt", tam);
   fim = clock();
   tempo_decorrido = ((double)(fim - inicio)) / CLOCKS_PER_SEC;
 

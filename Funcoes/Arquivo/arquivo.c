@@ -1,11 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 void LeArquivo(int *V, int tam) {
   FILE *arq;
-  arq = fopen("Bancodedados.txt", "r");
+  arq = fopen("../../Dados/Bancodedados.txt", "r");
+  // arq = fopen("Trabalho/Dados/Aleatorio.txt", "r");
   if (arq == NULL) {
-    printf("Erro de alocacao ou Falha no arquivo \n");
+    printf("Erro de alocacao ou Falha no arquivo\n");
   } else {
     for (int i = 0; i < tam; i++) {
       fscanf(arq, "%d\n", &V[i]);
@@ -16,7 +18,9 @@ void LeArquivo(int *V, int tam) {
 
 void SalvarArquivoOriginal(int *V, int tam, char *nome) {
   FILE *arq;
-  arq = fopen(nome, "w");
+  char caminho[50] = "../../Dados/";
+  strcat(caminho, nome);
+  arq = fopen(caminho, "w");
 
   if (arq == NULL) {
     printf("Erro de alocacao ou Falha no arquivo \n");
@@ -32,7 +36,10 @@ void SalvarArquivoOriginal(int *V, int tam, char *nome) {
 
 void SalvarArquivoOrdenado(int *V, int tam, char *nome, double time, int comparacoes, int trocas) {
   FILE *arq;
-  arq = fopen(nome, "w");
+
+  char caminho[50] = "../../Saidas/";
+  strcat(caminho, nome);
+  arq = fopen(caminho, "w");
 
   if (arq == NULL) {
     printf("Erro de alocacao ou Falha no arquivo \n");
