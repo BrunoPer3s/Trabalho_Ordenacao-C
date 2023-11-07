@@ -45,11 +45,5 @@ int main() {
 
   heapSort(V, tam);
 
-  // imprime(V, tam);
-  /*for (int i = 0; i < tam; i++) {
-    printf("%d ", V[i]);
-  }
-  printf("\n");*/
-
   return 0;
 }

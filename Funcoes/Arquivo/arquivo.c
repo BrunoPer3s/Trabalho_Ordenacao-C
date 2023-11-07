@@ -4,8 +4,7 @@
 
 void LeArquivo(int *V, int tam) {
   FILE *arq;
-  arq = fopen("../../Dados/Bancodedados.txt", "r");
-  // arq = fopen("Trabalho/Dados/Aleatorio.txt", "r");
+  arq = fopen("./Dados/Bancodedados.txt", "r");
   if (arq == NULL) {
     printf("Erro de alocacao ou Falha no arquivo\n");
   } else {
@@ -18,7 +17,7 @@ void LeArquivo(int *V, int tam) {
 
 void SalvarArquivoOriginal(int *V, int tam, char *nome) {
   FILE *arq;
-  char caminho[50] = "../../Dados/";
+  char caminho[50] = "./Dados/";
   strcat(caminho, nome);
   arq = fopen(caminho, "w");
 
@@ -37,7 +36,7 @@ void SalvarArquivoOriginal(int *V, int tam, char *nome) {
 void SalvarArquivoOrdenado(int *V, int tam, char *nome, double time, int comparacoes, int trocas) {
   FILE *arq;
 
-  char caminho[50] = "../../Saidas/";
+  char caminho[50] = "./Saidas/";
   strcat(caminho, nome);
   arq = fopen(caminho, "w");
 
