@@ -1,4 +1,4 @@
-1
+0
 1
 2
 3
@@ -99,6 +99,6 @@
 98
 99
 
-Tempo decorrido: 0.000053
+Tempo decorrido: 0.000054
 Comparações: 199
 Trocas: 101

@@ -13,6 +13,12 @@ void geraVetorOrdenado(int *V, int tam) {
   SalvarArquivoOriginal(V, tam, nome);
 }
 
+void geraVetorOrdenadoBase(int *V, int tam) {
+  for (int i = 0; i < tam; i++) {
+    V[i] = i + 1;
+  }
+}
+
 void geraVetorInvOrdenado(int *V, int tam) {
   int i = 0;
   int aux = tam;
@@ -28,7 +34,7 @@ void geraVetorInvOrdenado(int *V, int tam) {
 
 void geraVetorAleatorio(int *V, int tam) {
   srand(time(NULL));
-  geraVetorOrdenado(V, tam);
+  geraVetorOrdenadoBase(V, tam);
   for (int i = tam - 1; i > 0; i--) {
     // Gere um índice aleatório no intervalo [0, i]
     int j = rand() % (i + 1);

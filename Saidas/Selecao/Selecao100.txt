@@ -101,4 +101,4 @@
 
 Tempo decorrido: 0.000018
 Comparações: 4950
-Trocas: 95
+Trocas: 96

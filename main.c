@@ -11,9 +11,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <time.h>
 
-int main() {
+int main(char argv[]) {
+  if (argv == "Teste") {
+    printf("Certoz/");
+  }
   int tam = 100;
   int V[tam];
   char bancodedados[50];

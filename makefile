@@ -41,3 +41,11 @@ executa:
 
 clean:
 	rm main.o arquivo.o bolha.o gera.o imprime.o insercaoDireta.o insercaoBinaria.o shellsort.o selecao.o heapSort.o quickSort.o prog
+
+gera: comp
+
+comp: gerador.o arquivo.o gera.o
+	gcc gerador.o arquivo.o gera.o -o gera
+
+gerador.o: gerador.c
+	gcc -c gerador.c
