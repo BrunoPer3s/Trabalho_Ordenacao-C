@@ -43,9 +43,10 @@ void heapSort(int *v, int tam) {
   }
 
   char nome[50];
+  char pasta[50] = "HeapSort/";
   sprintf(nome, "HeapSort%d.txt", tam);
   fim = clock();
   tempo_decorrido = ((double)(fim - inicio)) / CLOCKS_PER_SEC;
 
-  SalvarArquivoOrdenado(v, tam, nome, tempo_decorrido, comparacoes, trocas);
+  SalvarArquivoOrdenado(v, tam, nome, pasta, tempo_decorrido, comparacoes, trocas);
 }

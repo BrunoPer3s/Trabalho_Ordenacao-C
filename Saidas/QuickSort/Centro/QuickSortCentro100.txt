@@ -1,6 +1,5 @@
 1
 2
-2
 3
 4
 5
@@ -98,7 +97,8 @@
 97
 98
 99
+100
 
-Tempo decorrido: 0.000088
-Comparações: 199
-Trocas: 101
+Tempo decorrido: 0.000032
+Comparações: 95
+Trocas: 57

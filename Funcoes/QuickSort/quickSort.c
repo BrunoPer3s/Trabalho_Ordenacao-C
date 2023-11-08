@@ -119,11 +119,12 @@ void quickSortIni(int *v, int tam, int esq, int dir) {
 
   if ((dir + esq) == tam) {
     char nome[50];
+    char aux[50] = "QuickSort/Inicio/";
     sprintf(nome, "QuickSortIni%d.txt", tam);
     fim = clock();
     tempo_decorrido = ((double)(fim - inicio)) / CLOCKS_PER_SEC;
 
-    SalvarArquivoOrdenado(v, tam, nome, tempo_decorrido, comparacoes, trocas);
+    SalvarArquivoOrdenado(v, tam, nome, aux, tempo_decorrido, comparacoes, trocas);
   }
 }
 
@@ -148,11 +149,12 @@ void quickSortMediana(int *v, int tam, int esq, int dir) {
 
   if ((dir + esq) == tam) {
     char nome[50];
+    char aux[50] = "QuickSort/Mediana/";
     sprintf(nome, "QuickSortMediana%d.txt", tam);
     fim = clock();
     tempo_decorrido = ((double)(fim - inicio)) / CLOCKS_PER_SEC;
 
-    SalvarArquivoOrdenado(v, tam, nome, tempo_decorrido, comparacoes, trocas);
+    SalvarArquivoOrdenado(v, tam, nome, aux, tempo_decorrido, comparacoes, trocas);
   }
 }
 
@@ -177,10 +179,11 @@ void quickSortCentro(int *v, int tam, int esq, int dir) {
 
   if ((dir + esq) == tam) {
     char nome[50];
+    char pasta[50] = "QuickSort/Centro/";
     sprintf(nome, "QuickSortCentro%d.txt", tam);
     fim = clock();
     tempo_decorrido = ((double)(fim - inicio)) / CLOCKS_PER_SEC;
 
-    SalvarArquivoOrdenado(v, tam, nome, tempo_decorrido, comparacoes, trocas);
+    SalvarArquivoOrdenado(v, tam, nome, pasta, tempo_decorrido, comparacoes, trocas);
   }
 }

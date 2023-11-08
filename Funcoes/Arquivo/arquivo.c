@@ -2,9 +2,11 @@
 #include <stdlib.h>
 #include <string.h>
 
-void LeArquivo(int *V, int tam) {
+void LeArquivo(int *V, int tam, char metodo[50]) {
   FILE *arq;
-  arq = fopen("./Dados/Aleatorio100.txt", "r"); // Mudar aqui para carregar outro banco de dados
+  char caminho[50] = "./Dados/";
+  strcat(caminho, metodo);
+  arq = fopen(caminho, "r"); // Mudar aqui para carregar outro banco de dados
   if (arq == NULL) {
     printf("Erro de alocacao ou Falha no arquivo\n");
   } else {
@@ -33,10 +35,11 @@ void SalvarArquivoOriginal(int *V, int tam, char *nome) {
   }
 }
 
-void SalvarArquivoOrdenado(int *V, int tam, char *nome, double time, int comparacoes, int trocas) {
+void SalvarArquivoOrdenado(int *V, int tam, char *nome, char *aux, double time, int comparacoes, int trocas) {
   FILE *arq;
 
   char caminho[50] = "./Saidas/";
+  strcat(caminho, aux);
   strcat(caminho, nome);
   arq = fopen(caminho, "w");
 
