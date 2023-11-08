@@ -100,5 +100,5 @@
 100
 
 Tempo decorrido: 0.000018
-Comparações: 519
-Trocas: 499
+Comparações: 510
+Trocas: 489

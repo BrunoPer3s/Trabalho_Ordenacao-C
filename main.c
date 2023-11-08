@@ -5,6 +5,7 @@
 #include "./Funcoes/Gera/gera.h"
 #include "./Funcoes/HeapSort/heapSort.h"
 #include "./Funcoes/Imprime/imprime.h"
+#include "./Funcoes/QuickSort/quickSort.h"
 #include "./Funcoes/Selecao/selecao.h"
 #include "./Funcoes/ShellSort/shellsort.h"
 #include <stdio.h>
@@ -44,6 +45,18 @@ int main() {
   LeArquivo(V, tam);
 
   heapSort(V, tam);
+
+  LeArquivo(V, tam);
+
+  quickSortIni(V, tam, 0, tam);
+
+  LeArquivo(V, tam);
+
+  quickSortCentro(V, tam, 0, tam);
+
+  LeArquivo(V, tam);
+
+  quickSortMediana(V, tam, 0, tam);
 
   return 0;
 }

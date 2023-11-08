@@ -4,7 +4,7 @@
 
 void LeArquivo(int *V, int tam) {
   FILE *arq;
-  arq = fopen("./Dados/Bancodedados.txt", "r");
+  arq = fopen("./Dados/Aleatorio100.txt", "r"); // Mudar aqui para carregar outro banco de dados
   if (arq == NULL) {
     printf("Erro de alocacao ou Falha no arquivo\n");
   } else {

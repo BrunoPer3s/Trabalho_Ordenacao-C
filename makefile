@@ -1,7 +1,7 @@
 all: compila executa
 
-compila: main.o arquivo.o bolha.o gera.o imprime.o insercaoDireta.o insercaoBinaria.o shellsort.o selecao.o heapSort.o
-	gcc main.o arquivo.o bolha.o gera.o imprime.o insercaoDireta.o insercaoBinaria.o shellsort.o selecao.o heapSort.o -o prog
+compila: main.o arquivo.o bolha.o gera.o imprime.o insercaoDireta.o insercaoBinaria.o shellsort.o selecao.o heapSort.o quickSort.o
+	gcc main.o arquivo.o bolha.o gera.o imprime.o insercaoDireta.o insercaoBinaria.o shellsort.o selecao.o heapSort.o quickSort.o -o prog
 
 main.o: main.c
 	gcc -c main.c
@@ -33,8 +33,11 @@ selecao.o: ./Funcoes/Selecao/selecao.c
 heapSort.o: ./Funcoes/HeapSort/heapSort.c
 	gcc -c ./Funcoes/HeapSort/heapSort.c
 
+quickSort.o: ./Funcoes/QuickSort/quickSort.c
+	gcc -c ./Funcoes/QuickSort/quickSort.c
+
 executa:
 	./prog
 
 clean:
-	rm main.o arquivo.o bolha.o gera.o imprime.o insercaoDireta.o insercaoBinaria.o shellsort.o selecao.o heapSort.o prog
+	rm main.o arquivo.o bolha.o gera.o imprime.o insercaoDireta.o insercaoBinaria.o shellsort.o selecao.o heapSort.o quickSort.o prog
