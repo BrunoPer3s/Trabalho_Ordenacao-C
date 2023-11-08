@@ -8,8 +8,8 @@ void geraVetorOrdenado(int *V, int tam) {
   for (int i = 0; i < tam; i++) {
     V[i] = i + 1;
   }
-  char nome[50];
-  sprintf(nome, "Ordenado%d.txt", tam);
+  char nome[50] = "entrada.txt";
+  // sprintf(nome, "Ordenado%d.txt", tam);
   SalvarArquivoOriginal(V, tam, nome);
 }
 
@@ -27,8 +27,8 @@ void geraVetorInvOrdenado(int *V, int tam) {
     aux--;
     i++;
   }
-  char nome[50];
-  sprintf(nome, "InvOrdenado%d.txt", tam);
+  char nome[50] = "entrada.txt";
+  // sprintf(nome, "InvOrdenado%d.txt", tam);
   SalvarArquivoOriginal(V, tam, nome);
 }
 
@@ -44,7 +44,7 @@ void geraVetorAleatorio(int *V, int tam) {
     V[i] = V[j];
     V[j] = temp;
   }
-  char nome[50];
-  sprintf(nome, "Aleatorio%d.txt", tam);
+  char nome[50] = "entrada.txt";
+  // sprintf(nome, "Aleatorio%d.txt", tam);
   SalvarArquivoOriginal(V, tam, nome);
 }

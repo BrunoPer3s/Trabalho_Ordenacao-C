@@ -7,7 +7,7 @@
 void main(int argc, char *argv[]) {
 
   if (argc != 3) {
-    printf("Você deve fornecer exatamente 2 argumentos na execução.\n");
+    printf("Você deve fornecer exatamente 3 argumentos na execução.\n");
     printf("Deve seguir o padrão: \n./gera -c n.\n");
     printf("-c -> Para crescente\n");
     printf("-d -> Para decrescente\n");
