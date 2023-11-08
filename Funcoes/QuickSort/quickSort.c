@@ -9,7 +9,7 @@ void particaoIni(int *v, int esq, int dir, int *i, int *j, int *comparacoes, int
   *j = dir;
   int pivo, aux;
 
-  pivo = dir;
+  pivo = esq + 1;
 
   while (*i <= *j) {
     while (v[*i] < pivo && *i < dir) {
@@ -49,7 +49,7 @@ void particaoMediana(int *v, int esq, int dir, int *i, int *j, int *comparacoes,
     }
   }
 
-  pivo = mediana;
+  pivo = mediana + 1;
 
   while (*i <= *j) {
     while (v[*i] < pivo && *i < dir) {
