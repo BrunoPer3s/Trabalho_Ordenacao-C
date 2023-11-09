@@ -4,8 +4,10 @@
 
 void LeArquivo(int *V, int tam, char metodo[50]) {
   FILE *arq;
-  char caminho[50] = "./Dados/";
-  strcat(caminho, metodo);
+  char caminho[50] = "./Da
+                     dos /
+                     ";
+                     strcat(caminho, metodo);
   arq = fopen(caminho, "r"); // Mudar aqui para carregar outro banco de dados
   if (arq == NULL) {
     printf("Erro de alocacao ou Falha no arquivo\n");

@@ -4,6 +4,7 @@
 #include "./Funcoes/Direta/insercaoDireta.h"
 #include "./Funcoes/HeapSort/heapSort.h"
 #include "./Funcoes/Imprime/imprime.h"
+#include "./Funcoes/MergeSort/mergeSort.h"
 #include "./Funcoes/QuickSort/quickSort.h"
 #include "./Funcoes/Selecao/selecao.h"
 #include "./Funcoes/ShellSort/shellsort.h"
@@ -67,7 +68,8 @@ void main(int argc, char *argv[]) {
                     quickSortMediana(V, tam, 0, tam);
                   } else {
                     if (strcmp(metodo, "mergesort") == 0) {
-                      exit(0);
+                      LeArquivo(V, tam, arquivo);
+                      mergeSort(V, tam, 0, tam);
                     } else {
                       if (strcmp(metodo, "radixsort") == 0) {
                         exit(0);
