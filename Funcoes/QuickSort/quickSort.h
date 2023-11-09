@@ -4,8 +4,8 @@ void particaoMediana(int *v, int esq, int dir, int *i, int *j, int *comparacoes,
 
 void particaoCentro(int *v, int esq, int dir, int *i, int *j, int *comparacoes, int *trocas);
 
-void quickSortIni(int *v, int tam, int esq, int dir);
+void quickSortIni(int *v, int tam, int esq, int dir, int *comparacoes, int *trocas);
 
-void quickSortMediana(int *v, int tam, int esq, int dir);
+void quickSortMediana(int *v, int tam, int esq, int dir, int *comparacoes, int *trocas);
 
-void quickSortCentro(int *v, int tam, int esq, int dir);
+void quickSortCentro(int *v, int tam, int esq, int dir, int *comparacoes, int *trocas);

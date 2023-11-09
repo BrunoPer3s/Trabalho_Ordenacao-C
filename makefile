@@ -46,4 +46,4 @@ mergeSort.o: ./Funcoes/MergeSort/mergeSort.c
 	gcc -c ./Funcoes/MergeSort/mergeSort.c
 
 clean:
-	rm gerador.o ordena.o arquivo.o bolha.o gera.o imprime.o insercaoDireta.o insercaoBinaria.o shellsort.o selecao.o heapSort.o quickSort.o mergeSorte.o gera ordena
+	rm gerador.o ordena.o arquivo.o bolha.o gera.o imprime.o insercaoDireta.o insercaoBinaria.o shellsort.o selecao.o heapSort.o quickSort.o mergeSort.o gera ordena

@@ -11,6 +11,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <time.h>
 
 void main(int argc, char *argv[]) {
 
@@ -29,7 +30,12 @@ void main(int argc, char *argv[]) {
 
   int tam = atoi(argv[2]);
 
+  printf("Esse é o tamanho: %d\n", tam);
+
   int V[tam];
+
+  clock_t inicio, fim;
+  double tempo_decorrido;
 
   if (strcmp(metodo, "bolha") == 0) {
     LeArquivo(V, tam, arquivo);
@@ -56,20 +62,69 @@ void main(int argc, char *argv[]) {
               heapSort(V, tam);
             } else {
               if (strcmp(metodo, "quicksortini") == 0) {
+                inicio = clock();
+                int comparacoes = 0;
+                int trocas = 0;
+
                 LeArquivo(V, tam, arquivo);
-                quickSortIni(V, tam, 0, tam);
+                quickSortIni(V, tam, 0, tam - 1, &comparacoes, &trocas);
+
+                char nome[50];
+                char aux[50] = "QuickSort/Inicio/";
+                sprintf(nome, "QuickSortIni%d.txt", tam);
+                fim = clock();
+                tempo_decorrido = ((double)(fim - inicio)) / CLOCKS_PER_SEC;
+
+                SalvarArquivoOrdenado(V, tam, nome, aux, tempo_decorrido, comparacoes, trocas);
               } else {
                 if (strcmp(metodo, "quicksortcentro") == 0) {
+                  inicio = clock();
+                  int comparacoes = 0;
+                  int trocas = 0;
+
                   LeArquivo(V, tam, arquivo);
-                  quickSortCentro(V, tam, 0, tam);
+                  quickSortCentro(V, tam, 0, tam - 1, &comparacoes, &trocas);
+
+                  char nome[50];
+                  char aux[50] = "QuickSort/Centro/";
+                  sprintf(nome, "QuickSortCentro%d.txt", tam);
+                  fim = clock();
+                  tempo_decorrido = ((double)(fim - inicio)) / CLOCKS_PER_SEC;
+
+                  SalvarArquivoOrdenado(V, tam, nome, aux, tempo_decorrido, comparacoes, trocas);
                 } else {
                   if (strcmp(metodo, "quicksortmediana") == 0) {
+                    inicio = clock();
+                    int comparacoes = 0;
+                    int trocas = 0;
+
                     LeArquivo(V, tam, arquivo);
-                    quickSortMediana(V, tam, 0, tam);
+                    quickSortMediana(V, tam, 0, tam - 1, &comparacoes, &trocas);
+
+                    char nome[50];
+                    char aux[50] = "QuickSort/Mediana/";
+                    sprintf(nome, "QuickSortMediana%d.txt", tam);
+                    fim = clock();
+                    tempo_decorrido = ((double)(fim - inicio)) / CLOCKS_PER_SEC;
+
+                    SalvarArquivoOrdenado(V, tam, nome, aux, tempo_decorrido, comparacoes, trocas);
+
                   } else {
                     if (strcmp(metodo, "mergesort") == 0) {
+                      inicio = clock();
+                      int comparacoes = 0;
+                      int trocas = 0;
+
                       LeArquivo(V, tam, arquivo);
-                      mergeSort(V, tam, 0, tam);
+                      mergeSort(V, tam, 0, tam - 1, &comparacoes, &trocas);
+
+                      char nome[50];
+                      char aux[50] = "MergeSort/";
+                      sprintf(nome, "MergeSort%d.txt", tam);
+                      fim = clock();
+                      tempo_decorrido = ((double)(fim - inicio)) / CLOCKS_PER_SEC;
+
+                      SalvarArquivoOrdenado(V, tam, nome, aux, tempo_decorrido, comparacoes, trocas);
                     } else {
                       if (strcmp(metodo, "radixsort") == 0) {
                         exit(0);

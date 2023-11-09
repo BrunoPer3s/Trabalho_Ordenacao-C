@@ -3,12 +3,7 @@
 #include <stdlib.h>
 #include <time.h>
 
-clock_t comeco, final;
-double tempo_decorrido;
-int comparacoes = 0;
-int trocas = 0;
-
-void intercalar(int *v, int tam, int inicio, int meio, int fim) {
+void intercalar(int *v, int tam, int inicio, int meio, int fim, int *comparacoes, int *trocas) {
   int i = inicio;
   int j = meio + 1;
   int k = 0;
@@ -29,23 +24,15 @@ void intercalar(int *v, int tam, int inicio, int meio, int fim) {
   }
 }
 
-void mergeSort(int *v, int tam, int inicio, int fim) {
+void mergeSort(int *v, int tam, int inicio, int fim, int *comparacoes, int *trocas) {
   int meio;
-  if (inicio + fim == tam) {
-    comeco = clock();
-  }
+
   if (inicio < fim) {
     meio = (inicio + fim) / 2;
-    mergeSort(v, tam, inicio, meio);
-    mergeSort(v, tam, meio + 1, fim);
-    intercalar(v, tam, inicio, meio, fim);
+    mergeSort(v, tam, inicio, meio, comparacoes, trocas);
+    mergeSort(v, tam, meio + 1, fim, comparacoes, trocas);
+    intercalar(v, tam, inicio, meio, fim, comparacoes, trocas);
   }
-  if (inicio + fim == tam) {
-    char nome[50];
-    char pasta[50] = "MergeSort/";
-    sprintf(nome, "MergeSort%d.txt", tam);
-    final = clock();
-    tempo_decorrido = ((double)(final - comeco)) / CLOCKS_PER_SEC;
-    SalvarArquivoOrdenado(v, tam, nome, pasta, tempo_decorrido, comparacoes, trocas);
-  }
+
+  (*comparacoes) = 9999;
 }

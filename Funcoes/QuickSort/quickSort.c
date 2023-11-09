@@ -4,12 +4,11 @@
 #include <time.h>
 
 void particaoIni(int *v, int esq, int dir, int *i, int *j, int *comparacoes, int *trocas) {
-
   *i = esq;
   *j = dir;
   int pivo, aux;
 
-  pivo = esq + 1;
+  pivo = v[esq];
 
   while (*i <= *j) {
     while (v[*i] < pivo && *i < dir) {
@@ -36,20 +35,20 @@ void particaoMediana(int *v, int esq, int dir, int *i, int *j, int *comparacoes,
   *i = esq;
   *j = dir;
   int pivo, aux;
-  int mediana;
-  int meio = (esq + dir) / 2;
+  // int mediana;
+  int meio = (esq + dir + 1) / 2;
 
   if (v[esq] > v[meio] && v[esq] < v[dir]) {
-    mediana = esq;
+    pivo = v[esq];
   } else {
     if (v[meio] > v[dir] && v[meio] < v[dir]) {
-      mediana = meio;
+      pivo = v[meio];
     } else {
-      mediana = dir;
+      pivo = v[dir];
     }
   }
 
-  pivo = mediana + 1;
+  // pivo = v[mediana];
 
   while (*i <= *j) {
     while (v[*i] < pivo && *i < dir) {
@@ -98,92 +97,45 @@ void particaoCentro(int *v, int esq, int dir, int *i, int *j, int *comparacoes, 
   }
 }
 
-void quickSortIni(int *v, int tam, int esq, int dir) {
+void quickSortIni(int *v, int tam, int esq, int dir, int *comparacoes, int *trocas) {
 
-  clock_t inicio, fim;
-  double tempo_decorrido;
-  inicio = clock();
-  int comparacoes = 0;
-  int trocas = 0;
   int i, j;
 
-  particaoIni(v, esq, dir, &i, &j, &comparacoes, &trocas);
-  comparacoes += (j - esq + 1);
-  trocas += (j - esq + 1);
+  particaoIni(v, esq, dir, &i, &j, comparacoes, trocas);
+  (*comparacoes) += (j - esq + 1);
+  (*trocas) += (j - esq + 1);
   if (i < dir) {
-    quickSortIni(v, tam, i, dir);
+    quickSortIni(v, tam, i, dir, comparacoes, trocas);
   }
   if (j > esq) {
-    quickSortIni(v, tam, esq, j);
-  }
-
-  if ((dir + esq) == tam) {
-    char nome[50];
-    char aux[50] = "QuickSort/Inicio/";
-    sprintf(nome, "QuickSortIni%d.txt", tam);
-    fim = clock();
-    tempo_decorrido = ((double)(fim - inicio)) / CLOCKS_PER_SEC;
-
-    SalvarArquivoOrdenado(v, tam, nome, aux, tempo_decorrido, comparacoes, trocas);
+    quickSortIni(v, tam, esq, j, comparacoes, trocas);
   }
 }
 
-void quickSortMediana(int *v, int tam, int esq, int dir) {
+void quickSortMediana(int *v, int tam, int esq, int dir, int *comparacoes, int *trocas) {
 
-  clock_t inicio, fim;
-  double tempo_decorrido;
-  inicio = clock();
-  int comparacoes = 0;
-  int trocas = 0;
   int i, j;
 
-  particaoMediana(v, esq, dir, &i, &j, &comparacoes, &trocas);
-  comparacoes += (j - esq + 1);
-  trocas += (j - esq + 1);
+  particaoMediana(v, esq, dir, &i, &j, comparacoes, trocas);
+
   if (i < dir) {
-    quickSortMediana(v, tam, i, dir);
+    quickSortMediana(v, tam, i, dir, comparacoes, trocas);
   }
   if (j > esq) {
-    quickSortMediana(v, tam, esq, j);
-  }
-
-  if ((dir + esq) == tam) {
-    char nome[50];
-    char aux[50] = "QuickSort/Mediana/";
-    sprintf(nome, "QuickSortMediana%d.txt", tam);
-    fim = clock();
-    tempo_decorrido = ((double)(fim - inicio)) / CLOCKS_PER_SEC;
-
-    SalvarArquivoOrdenado(v, tam, nome, aux, tempo_decorrido, comparacoes, trocas);
+    quickSortMediana(v, tam, esq, j, comparacoes, trocas);
   }
 }
 
-void quickSortCentro(int *v, int tam, int esq, int dir) {
+void quickSortCentro(int *v, int tam, int esq, int dir, int *comparacoes, int *trocas) {
 
-  clock_t inicio, fim;
-  double tempo_decorrido;
-  inicio = clock();
-  int comparacoes = 0;
-  int trocas = 0;
   int i, j;
 
-  particaoCentro(v, esq, dir, &i, &j, &comparacoes, &trocas);
-  comparacoes += (j - esq + 1);
-  trocas += (j - esq + 1);
+  particaoCentro(v, esq, dir, &i, &j, comparacoes, trocas);
+
   if (i < dir) {
-    quickSortCentro(v, tam, i, dir);
+    quickSortCentro(v, tam, i, dir, comparacoes, trocas);
   }
   if (j > esq) {
-    quickSortCentro(v, tam, esq, j);
-  }
-
-  if ((dir + esq) == tam) {
-    char nome[50];
-    char pasta[50] = "QuickSort/Centro/";
-    sprintf(nome, "QuickSortCentro%d.txt", tam);
-    fim = clock();
-    tempo_decorrido = ((double)(fim - inicio)) / CLOCKS_PER_SEC;
-
-    SalvarArquivoOrdenado(v, tam, nome, pasta, tempo_decorrido, comparacoes, trocas);
+    quickSortCentro(v, tam, esq, j, comparacoes, trocas);
   }
 }

@@ -1,4 +1,3 @@
--164050184
 1
 2
 3
@@ -9998,7 +9997,8 @@
 9997
 9998
 9999
+10000
 
-Tempo decorrido: 0.003713
-Comparações: 0
+Tempo decorrido: 0.004883
+Comparações: 9999
 Trocas: 0
