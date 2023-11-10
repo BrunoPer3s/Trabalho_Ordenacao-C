@@ -1,13 +1,14 @@
 #include "./Funcoes/Arquivo/arquivo.h"
 #include "./Funcoes/Binaria/insercaoBinaria.h"
 #include "./Funcoes/Bolha/bolha.h"
+#include "./Funcoes/BucketSort/bucketSort.h"
 #include "./Funcoes/Direta/insercaoDireta.h"
 #include "./Funcoes/HeapSort/heapSort.h"
 #include "./Funcoes/Imprime/imprime.h"
 #include "./Funcoes/MergeSort/mergeSort.h"
 #include "./Funcoes/QuickSort/quickSort.h"
 #include "./Funcoes/Selecao/selecao.h"
-#include "./Funcoes/ShellSort/shellsort.h"
+#include "./Funcoes/ShellSort/shellSort.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -29,8 +30,6 @@ void main(int argc, char *argv[]) {
   char *arquivo = argv[3];
 
   int tam = atoi(argv[2]);
-
-  printf("Esse é o tamanho: %d\n", tam);
 
   int V[tam];
 
@@ -130,7 +129,23 @@ void main(int argc, char *argv[]) {
                         exit(0);
                       } else {
                         if (strcmp(metodo, "bucketsort") == 0) {
-                          exit(0);
+
+                          inicio = clock();
+                          int comparacoes = 0;
+                          int trocas = 0;
+
+                          LeArquivo(V, tam, arquivo);
+
+                          bucketSort(V, tam, &comparacoes, &trocas);
+
+                          char nome[50];
+                          char aux[50] = "BucketSort/";
+                          sprintf(nome, "BucketSort%d.txt", tam);
+                          fim = clock();
+                          tempo_decorrido = ((double)(fim - inicio)) / CLOCKS_PER_SEC;
+
+                          SalvarArquivoOrdenado(V, tam, nome, aux, tempo_decorrido, comparacoes, trocas);
+
                         } else {
                           printf("Algum dado foi passado errado!!!\n");
                           exit(0);

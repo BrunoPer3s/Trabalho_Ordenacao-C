@@ -3,8 +3,8 @@ all: comp comp2
 comp: gerador.o arquivo.o gera.o
 	gcc gerador.o arquivo.o gera.o -o gera
 
-comp2: ordena.o arquivo.o bolha.o imprime.o insercaoDireta.o insercaoBinaria.o shellsort.o selecao.o heapSort.o quickSort.o mergeSort.o
-	gcc ordena.o arquivo.o bolha.o imprime.o insercaoDireta.o insercaoBinaria.o shellsort.o selecao.o heapSort.o quickSort.o mergeSort.o -o ordena
+comp2: ordena.o arquivo.o bolha.o imprime.o insercaoDireta.o insercaoBinaria.o shellSort.o selecao.o heapSort.o quickSort.o mergeSort.o bucketSort.o
+	gcc ordena.o arquivo.o bolha.o imprime.o insercaoDireta.o insercaoBinaria.o shellSort.o selecao.o heapSort.o quickSort.o mergeSort.o bucketSort.o -o ordena
 
 gerador.o: gerador.c
 	gcc -c gerador.c
@@ -30,8 +30,8 @@ insercaoDireta.o: ./Funcoes/Direta/insercaoDireta.c
 insercaoBinaria.o: ./Funcoes/Binaria/insercaoBinaria.c
 	gcc -c ./Funcoes/Binaria/insercaoBinaria.c
 
-shellsort.o: ./Funcoes/ShellSort/shellsort.c
-	gcc -c ./Funcoes/ShellSort/shellsort.c
+shellSort.o: ./Funcoes/ShellSort/shellSort.c
+	gcc -c ./Funcoes/ShellSort/shellSort.c
 
 selecao.o: ./Funcoes/Selecao/selecao.c
 	gcc -c ./Funcoes/Selecao/selecao.c
@@ -44,6 +44,9 @@ quickSort.o: ./Funcoes/QuickSort/quickSort.c
 
 mergeSort.o: ./Funcoes/MergeSort/mergeSort.c
 	gcc -c ./Funcoes/MergeSort/mergeSort.c
+
+bucketSort.o: ./Funcoes/BucketSort/bucketSort.c
+	gcc -c ./Funcoes/BucketSort/bucketSort.c
 
 clean:
 	rm gerador.o ordena.o arquivo.o bolha.o gera.o imprime.o insercaoDireta.o insercaoBinaria.o shellsort.o selecao.o heapSort.o quickSort.o mergeSort.o gera ordena
