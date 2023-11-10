@@ -3,8 +3,8 @@ all: comp comp2
 comp: gerador.o arquivo.o gera.o
 	gcc gerador.o arquivo.o gera.o -o gera
 
-comp2: ordena.o arquivo.o bolha.o imprime.o insercaoDireta.o insercaoBinaria.o shellSort.o selecao.o heapSort.o quickSort.o mergeSort.o bucketSort.o
-	gcc ordena.o arquivo.o bolha.o imprime.o insercaoDireta.o insercaoBinaria.o shellSort.o selecao.o heapSort.o quickSort.o mergeSort.o bucketSort.o -o ordena
+comp2: ordena.o arquivo.o bolha.o imprime.o insercaoDireta.o insercaoBinaria.o shellSort.o selecao.o heapSort.o quickSort.o mergeSort.o bucketSort.o radixSort.o
+	gcc ordena.o arquivo.o bolha.o imprime.o insercaoDireta.o insercaoBinaria.o shellSort.o selecao.o heapSort.o quickSort.o mergeSort.o bucketSort.o radixSort.o -o ordena
 
 gerador.o: gerador.c
 	gcc -c gerador.c
@@ -48,5 +48,8 @@ mergeSort.o: ./Funcoes/MergeSort/mergeSort.c
 bucketSort.o: ./Funcoes/BucketSort/bucketSort.c
 	gcc -c ./Funcoes/BucketSort/bucketSort.c
 
+radixSort.o: ./Funcoes/RadixSort/radixSort.c
+	gcc -c ./Funcoes/RadixSort/radixSort.c
+
 clean:
-	rm gerador.o ordena.o arquivo.o bolha.o gera.o imprime.o insercaoDireta.o insercaoBinaria.o shellsort.o selecao.o heapSort.o quickSort.o mergeSort.o gera ordena
+	rm gerador.o ordena.o arquivo.o bolha.o gera.o imprime.o insercaoDireta.o insercaoBinaria.o shellSort.o selecao.o heapSort.o quickSort.o mergeSort.o bucketSort.o radixSort.o gera ordena

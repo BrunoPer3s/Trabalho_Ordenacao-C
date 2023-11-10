@@ -7,6 +7,7 @@
 #include "./Funcoes/Imprime/imprime.h"
 #include "./Funcoes/MergeSort/mergeSort.h"
 #include "./Funcoes/QuickSort/quickSort.h"
+#include "./Funcoes/RadixSort/radixSort.h"
 #include "./Funcoes/Selecao/selecao.h"
 #include "./Funcoes/ShellSort/shellSort.h"
 #include <stdio.h>
@@ -126,7 +127,21 @@ void main(int argc, char *argv[]) {
                       SalvarArquivoOrdenado(V, tam, nome, aux, tempo_decorrido, comparacoes, trocas);
                     } else {
                       if (strcmp(metodo, "radixsort") == 0) {
-                        exit(0);
+                        inicio = clock();
+                        int comparacoes = 0;
+                        int trocas = 0;
+
+                        LeArquivo(V, tam, arquivo);
+
+                        radixSort(V, tam, &comparacoes, &trocas);
+
+                        char nome[50];
+                        char aux[50] = "RadixSort/";
+                        sprintf(nome, "RadixSort%d.txt", tam);
+                        fim = clock();
+                        tempo_decorrido = ((double)(fim - inicio)) / CLOCKS_PER_SEC;
+
+                        SalvarArquivoOrdenado(V, tam, nome, aux, tempo_decorrido, comparacoes, trocas);
                       } else {
                         if (strcmp(metodo, "bucketsort") == 0) {
 
