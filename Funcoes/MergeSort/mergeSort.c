@@ -1,7 +1,5 @@
-#include "../Arquivo/arquivo.h"
 #include <stdio.h>
 #include <stdlib.h>
-#include <time.h>
 
 void intercalar(int *v, int tam, int inicio, int meio, int fim, int *comparacoes, int *trocas) {
   int i = inicio;

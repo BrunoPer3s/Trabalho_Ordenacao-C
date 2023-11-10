@@ -1,7 +1,5 @@
-#include "../Arquivo/arquivo.h"
 #include <stdio.h>
 #include <stdlib.h>
-#include <time.h>
 
 void particaoIni(int *v, int esq, int dir, int *i, int *j, int *comparacoes, int *trocas) {
   *i = esq;
@@ -35,7 +33,6 @@ void particaoMediana(int *v, int esq, int dir, int *i, int *j, int *comparacoes,
   *i = esq;
   *j = dir;
   int pivo, aux;
-  // int mediana;
   int meio = (esq + dir + 1) / 2;
 
   if (v[esq] > v[meio] && v[esq] < v[dir]) {
@@ -47,8 +44,6 @@ void particaoMediana(int *v, int esq, int dir, int *i, int *j, int *comparacoes,
       pivo = v[dir];
     }
   }
-
-  // pivo = v[mediana];
 
   while (*i <= *j) {
     while (v[*i] < pivo && *i < dir) {
