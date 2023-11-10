@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void particao(int *v, int esq, int dir, int *i, int *j) {
+void particao(int *v, int esq, int dir, int *i, int *j, int *comparacoes, int *trocas) {
   *i = esq;
   *j = dir;
   int pivo, aux;
@@ -11,9 +11,11 @@ void particao(int *v, int esq, int dir, int *i, int *j) {
   while (*i <= *j) {
     while (v[*i] < pivo && *i < dir) {
       (*i)++;
+      (*comparacoes)++;
     }
     while (v[*j] > pivo && *j > esq) {
       (*j)--;
+      (*comparacoes)++;
     }
     if (*i <= *j) {
       aux = v[*i];
@@ -21,18 +23,19 @@ void particao(int *v, int esq, int dir, int *i, int *j) {
       v[*j] = aux;
       (*i)++;
       (*j)--;
+      (*trocas)++;
     }
   }
 }
 
-void quickSort(int *v, int esq, int dir) {
+void quickSort(int *v, int esq, int dir, int *comparacoes, int *trocas) {
   int i, j;
-  particao(v, esq, dir, &i, &j);
+  particao(v, esq, dir, &i, &j, comparacoes, trocas);
   if (i < dir) {
-    quickSort(v, i, dir);
+    quickSort(v, i, dir, comparacoes, trocas);
   }
   if (j > esq) {
-    quickSort(v, esq, j);
+    quickSort(v, esq, j, comparacoes, trocas);
   }
 }
 
@@ -55,8 +58,6 @@ void bucketSort(int *v, int n, int *comparacoes, int *trocas) {
   int buckets[num_buckets][n];
   int bucket_counts[num_buckets];
 
-  printf("%d\n", n);
-
   for (int i = 0; i < num_buckets; i++) {
     bucket_counts[i] = 0;
   }
@@ -69,7 +70,7 @@ void bucketSort(int *v, int n, int *comparacoes, int *trocas) {
   for (int i = 0; i < num_buckets; i++) {
     if (bucket_counts[i] > 0) {
 
-      quickSort(buckets[i], 0, bucket_counts[i] - 1);
+      quickSort(buckets[i], 0, bucket_counts[i] - 1, comparacoes, trocas);
     }
   }
   int index = 0;

@@ -7,6 +7,12 @@ void intercalar(int *v, int tam, int inicio, int meio, int fim, int *comparacoes
   int k = 0;
   int Tmp[tam];
   while (i <= meio || j <= fim) {
+    (*comparacoes)++;
+
+    if (v[j] < v[i]) {
+      (*trocas)++;
+    }
+
     if (i == meio + 1 || (v[j] < v[i] && j != fim + 1)) {
       Tmp[k] = v[j];
       j++;
@@ -18,6 +24,7 @@ void intercalar(int *v, int tam, int inicio, int meio, int fim, int *comparacoes
     }
   }
   for (i = inicio; i <= fim; i++) {
+
     v[i] = Tmp[i - inicio];
   }
 }
@@ -31,6 +38,4 @@ void mergeSort(int *v, int tam, int inicio, int fim, int *comparacoes, int *troc
     mergeSort(v, tam, meio + 1, fim, comparacoes, trocas);
     intercalar(v, tam, inicio, meio, fim, comparacoes, trocas);
   }
-
-  (*comparacoes) = 9999;
 }

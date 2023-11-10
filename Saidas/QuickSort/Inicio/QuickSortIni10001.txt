@@ -9998,7 +9998,8 @@
 9998
 9999
 10000
+10001
 
-Tempo decorrido: 0.001308
-Comparações: 155101
-Trocas: 155101
+Tempo decorrido: 0.085041
+Comparações: 50005000
+Trocas: 10000

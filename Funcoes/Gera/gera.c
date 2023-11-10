@@ -36,10 +36,9 @@ void geraVetorAleatorio(int *V, int tam) {
   srand(time(NULL));
   geraVetorOrdenadoBase(V, tam);
   for (int i = tam - 1; i > 0; i--) {
-    // Gere um índice aleatório no intervalo [0, i]
+
     int j = rand() % (i + 1);
 
-    // Troque os elementos nas posições i e j
     int temp = V[i];
     V[i] = V[j];
     V[j] = temp;

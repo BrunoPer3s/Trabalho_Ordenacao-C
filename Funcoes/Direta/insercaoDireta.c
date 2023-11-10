@@ -16,8 +16,8 @@ void insercaoDireta(int *v, int tam) {
   for (int i = 1; i < tam; i++) {
     aux = v[i];
     j = i - 1;
+    comparacoes++;
     while (j >= 0 && aux < v[j]) {
-      comparacoes++;
       v[j + 1] = v[j];
       j--;
     }
