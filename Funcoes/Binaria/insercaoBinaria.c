@@ -16,6 +16,7 @@ void insercaoBinaria(int *v, int tam) {
   int esq;
   int dir;
   int meio;
+
   for (int i = 1; i < tam; i++) {
     aux = v[i];
     esq = 0;

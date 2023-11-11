@@ -3,21 +3,23 @@
 #include <stdlib.h>
 #include <time.h>
 
-void criaHeap(int *v, int inicio, int final, int *comparacoes, int *trocas) {
+void criaHeap(int *v, int inicio, int final, int *comparacoes, int *trocas)
+{
   int aux = v[inicio];
   int j = inicio * 2 + 1;
   while (j <= final) {
     if (j < final) {
-      (*comparacoes)++;
       if (v[j] < v[j + 1]) {
         j++;
       }
     }
+
     if (aux < v[j]) {
+      (*comparacoes)++;
+      (*trocas)++;
       v[inicio] = v[j];
       inicio = j;
       j = 2 * inicio + 1;
-      (*trocas)++;
     } else {
       break;
     }
@@ -32,10 +34,15 @@ void heapSort(int *v, int tam) {
 
   int comparacoes = 0;
   int trocas = 0;
+  
   for (int i = (tam - 1) / 2; i >= 0; i--) {
+    comparacoes++;
     criaHeap(v, i, tam - 1, &comparacoes, &trocas);
   }
+
   for (int i = tam - 1; i > 0; i--) {
+    comparacoes++;
+    trocas++;
     int aux = v[0];
     v[0] = v[i];
     v[i] = aux;

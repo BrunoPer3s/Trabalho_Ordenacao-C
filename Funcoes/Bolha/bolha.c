@@ -12,8 +12,8 @@ void ordenaBolha(int *v, int tam) {
   int aux;
   int comparacoes = 0;
   int trocas = 0;
-  for (int i = (tam - 1); i > 1; i--) {
-    for (int j = 0; j < i; j++) {
+  for (int i = 0; i < tam - 1; i++) {
+    for (int j = 0; j < tam - i - 1; j++) {
       comparacoes++;
       if (v[j] > v[j + 1]) {
         aux = v[j];
