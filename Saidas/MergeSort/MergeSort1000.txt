@@ -999,6 +999,6 @@
 999
 1000
 
-Tempo decorrido: 0.001095
-Comparações: 749000
-Trocas: 250999
+Tempo decorrido: 0.000111
+Comparações: 9976
+Trocas: 8977

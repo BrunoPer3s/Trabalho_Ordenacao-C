@@ -3,8 +3,7 @@
 #include <stdlib.h>
 #include <time.h>
 
-void criaHeap(int *v, int inicio, int final, int *comparacoes, int *trocas)
-{
+void criaHeap(int *v, int inicio, int final, int *comparacoes, int *trocas) {
   int aux = v[inicio];
   int j = inicio * 2 + 1;
   while (j <= final) {
@@ -34,7 +33,7 @@ void heapSort(int *v, int tam) {
 
   int comparacoes = 0;
   int trocas = 0;
-  
+
   for (int i = (tam - 1) / 2; i >= 0; i--) {
     comparacoes++;
     criaHeap(v, i, tam - 1, &comparacoes, &trocas);
@@ -56,4 +55,8 @@ void heapSort(int *v, int tam) {
   tempo_decorrido = ((double)(fim - inicio)) / CLOCKS_PER_SEC;
 
   SalvarArquivoOrdenado(v, tam, nome, pasta, tempo_decorrido, comparacoes, trocas);
+
+  char metodo[50] = "Heap Sort";
+
+  Relatorios(tam, metodo, tempo_decorrido, comparacoes, trocas);
 }

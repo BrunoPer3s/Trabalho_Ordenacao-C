@@ -57,3 +57,21 @@ void SalvarArquivoOrdenado(int *V, int tam, char *nome, char *aux, double time, 
     fclose(arq);
   }
 }
+
+void Relatorios(int tam, char nome[], double time, int comparacoes, int trocas) {
+
+  FILE *arq;
+
+  char caminho[50] = "./Relatorios/Relatorio.txt";
+  arq = fopen(caminho, "a");
+
+  if (arq == NULL) {
+    printf("Erro de alocacao ou Falha no arquivo \n");
+  } else {
+    fprintf(arq, "\nMédodo %s, Quantidade %d\n", nome, tam);
+    fprintf(arq, "Tempo decorrido: %f\n", time);
+    fprintf(arq, "Comparações: %d\n", comparacoes);
+    fprintf(arq, "Trocas: %d", trocas);
+    fclose(arq);
+  }
+}

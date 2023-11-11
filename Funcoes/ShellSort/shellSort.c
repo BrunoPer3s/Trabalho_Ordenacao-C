@@ -40,4 +40,8 @@ void shellsort(int *v, int tam) {
   tempo_decorrido = ((double)(fim - inicio)) / CLOCKS_PER_SEC;
 
   SalvarArquivoOrdenado(v, tam, nome, pasta, tempo_decorrido, comparacoes, trocas);
+
+  char metodo[50] = "Shell Sort";
+
+  Relatorios(tam, metodo, tempo_decorrido, comparacoes, trocas);
 }

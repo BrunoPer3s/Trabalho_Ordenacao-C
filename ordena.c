@@ -62,11 +62,11 @@ void main(int argc, char *argv[]) {
               heapSort(V, tam);
             } else {
               if (strcmp(metodo, "quicksortini") == 0) {
+                LeArquivo(V, tam, arquivo);
                 inicio = clock();
                 int comparacoes = 0;
                 int trocas = 0;
 
-                LeArquivo(V, tam, arquivo);
                 quickSortIni(V, tam, 0, tam - 1, &comparacoes, &trocas);
 
                 char nome[50];
@@ -76,13 +76,17 @@ void main(int argc, char *argv[]) {
                 tempo_decorrido = ((double)(fim - inicio)) / CLOCKS_PER_SEC;
 
                 SalvarArquivoOrdenado(V, tam, nome, aux, tempo_decorrido, comparacoes, trocas);
+
+                char metodo[50] = "Quick Sort Inicio";
+
+                Relatorios(tam, metodo, tempo_decorrido, comparacoes, trocas);
               } else {
                 if (strcmp(metodo, "quicksortcentro") == 0) {
+                  LeArquivo(V, tam, arquivo);
                   inicio = clock();
                   int comparacoes = 0;
                   int trocas = 0;
 
-                  LeArquivo(V, tam, arquivo);
                   quickSortCentro(V, tam, 0, tam - 1, &comparacoes, &trocas);
 
                   char nome[50];
@@ -92,13 +96,17 @@ void main(int argc, char *argv[]) {
                   tempo_decorrido = ((double)(fim - inicio)) / CLOCKS_PER_SEC;
 
                   SalvarArquivoOrdenado(V, tam, nome, aux, tempo_decorrido, comparacoes, trocas);
+
+                  char metodo[50] = "Quick Sort Centro";
+
+                  Relatorios(tam, metodo, tempo_decorrido, comparacoes, trocas);
                 } else {
                   if (strcmp(metodo, "quicksortmediana") == 0) {
+                    LeArquivo(V, tam, arquivo);
                     inicio = clock();
                     int comparacoes = 0;
                     int trocas = 0;
 
-                    LeArquivo(V, tam, arquivo);
                     quickSortMediana(V, tam, 0, tam - 1, &comparacoes, &trocas);
 
                     char nome[50];
@@ -109,13 +117,18 @@ void main(int argc, char *argv[]) {
 
                     SalvarArquivoOrdenado(V, tam, nome, aux, tempo_decorrido, comparacoes, trocas);
 
+                    char metodo[50] = "Quick Sort Mediana";
+
+                    Relatorios(tam, metodo, tempo_decorrido, comparacoes, trocas);
+
                   } else {
                     if (strcmp(metodo, "mergesort") == 0) {
+                      LeArquivo(V, tam, arquivo);
+
                       inicio = clock();
                       int comparacoes = 0;
                       int trocas = 0;
 
-                      LeArquivo(V, tam, arquivo);
                       mergeSort(V, tam, 0, tam - 1, &comparacoes, &trocas);
 
                       char nome[50];
@@ -125,13 +138,16 @@ void main(int argc, char *argv[]) {
                       tempo_decorrido = ((double)(fim - inicio)) / CLOCKS_PER_SEC;
 
                       SalvarArquivoOrdenado(V, tam, nome, aux, tempo_decorrido, comparacoes, trocas);
+
+                      char metodo[50] = "MergeSort";
+
+                      Relatorios(tam, metodo, tempo_decorrido, comparacoes, trocas);
                     } else {
                       if (strcmp(metodo, "radixsort") == 0) {
+                        LeArquivo(V, tam, arquivo);
                         inicio = clock();
                         int comparacoes = 0;
                         int trocas = 0;
-
-                        LeArquivo(V, tam, arquivo);
 
                         radixSort(V, tam, &comparacoes, &trocas);
 
@@ -142,14 +158,16 @@ void main(int argc, char *argv[]) {
                         tempo_decorrido = ((double)(fim - inicio)) / CLOCKS_PER_SEC;
 
                         SalvarArquivoOrdenado(V, tam, nome, aux, tempo_decorrido, comparacoes, trocas);
+
+                        char metodo[50] = "Radix Sort";
+
+                        Relatorios(tam, metodo, tempo_decorrido, comparacoes, trocas);
                       } else {
                         if (strcmp(metodo, "bucketsort") == 0) {
-
+                          LeArquivo(V, tam, arquivo);
                           inicio = clock();
                           int comparacoes = 0;
                           int trocas = 0;
-
-                          LeArquivo(V, tam, arquivo);
 
                           bucketSort(V, tam, &comparacoes, &trocas);
 
@@ -160,6 +178,10 @@ void main(int argc, char *argv[]) {
                           tempo_decorrido = ((double)(fim - inicio)) / CLOCKS_PER_SEC;
 
                           SalvarArquivoOrdenado(V, tam, nome, aux, tempo_decorrido, comparacoes, trocas);
+
+                          char metodo[50] = "Bucket Sort";
+
+                          Relatorios(tam, metodo, tempo_decorrido, comparacoes, trocas);
 
                         } else {
                           printf("Algum dado foi passado errado!!!\n");
