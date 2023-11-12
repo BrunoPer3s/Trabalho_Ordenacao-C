@@ -29,6 +29,7 @@ void shellsort(int *v, int tam) {
         comparacoes++;
         trocas++;
       }
+      comparacoes++;
       v[j + h] = aux;
     }
   }

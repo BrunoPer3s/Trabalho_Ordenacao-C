@@ -142,40 +142,40 @@ Tempo decorrido: 0.089835
 Comparações: 9999
 Trocas: 9999
 Médodo Shell Sort, Quantidade 100, Aleatório
-Tempo decorrido: 0.000009
-Comparações: 442
+Tempo decorrido: 0.000020
+Comparações: 784
 Trocas: 442
 Médodo Shell Sort, Quantidade 1000
-Tempo decorrido: 0.000091
-Comparações: 9059
+Tempo decorrido: 0.000220
+Comparações: 14516
 Trocas: 9059
 Médodo Shell Sort, Quantidade 10000
-Tempo decorrido: 0.001777
-Comparações: 167770
+Tempo decorrido: 0.003929
+Comparações: 243013
 Trocas: 167770
 Médodo Shell Sort, Quantidade 100, Crescente
-Tempo decorrido: 0.000003
-Comparações: 0
+Tempo decorrido: 0.000006
+Comparações: 342
 Trocas: 0
 Médodo Shell Sort, Quantidade 1000
-Tempo decorrido: 0.000019
-Comparações: 0
+Tempo decorrido: 0.000047
+Comparações: 5457
 Trocas: 0
 Médodo Shell Sort, Quantidade 10000
-Tempo decorrido: 0.000165
-Comparações: 0
+Tempo decorrido: 0.000490
+Comparações: 75243
 Trocas: 0
 Médodo Shell Sort, Quantidade 100, Decrescente
-Tempo decorrido: 0.000013
-Comparações: 230
+Tempo decorrido: 0.000011
+Comparações: 572
 Trocas: 230
 Médodo Shell Sort, Quantidade 1000
-Tempo decorrido: 0.000034
-Comparações: 3920
+Tempo decorrido: 0.000072
+Comparações: 9377
 Trocas: 3920
 Médodo Shell Sort, Quantidade 10000
-Tempo decorrido: 0.000358
-Comparações: 53704
+Tempo decorrido: 0.000964
+Comparações: 128947
 Trocas: 53704
 Médodo Heap Sort, Quantidade 100, Aleatório
 Tempo decorrido: 0.000008
@@ -393,38 +393,38 @@ Tempo decorrido: 0.001649
 Comparações: 50000
 Trocas: 100000
 Médodo Seleção Direta, Quantidade 100, Aleatório
-Tempo decorrido: 0.000020
-Comparações: 5050
+Tempo decorrido: 0.000014
+Comparações: 4950
 Trocas: 96
 Médodo Seleção Direta, Quantidade 1000
-Tempo decorrido: 0.000633
-Comparações: 500500
+Tempo decorrido: 0.001932
+Comparações: 499500
 Trocas: 987
 Médodo Seleção Direta, Quantidade 10000
-Tempo decorrido: 0.071046
-Comparações: 50005000
+Tempo decorrido: 0.093298
+Comparações: 49995000
 Trocas: 9992
 Médodo Seleção Direta, Quantidade 100, Crescente
-Tempo decorrido: 0.000012
-Comparações: 5050
+Tempo decorrido: 0.000017
+Comparações: 4950
 Trocas: 0
 Médodo Seleção Direta, Quantidade 1000
-Tempo decorrido: 0.000734
-Comparações: 500500
+Tempo decorrido: 0.000741
+Comparações: 499500
 Trocas: 0
 Médodo Seleção Direta, Quantidade 10000
-Tempo decorrido: 0.060346
-Comparações: 50005000
+Tempo decorrido: 0.085357
+Comparações: 49995000
 Trocas: 0
 Médodo Seleção Direta, Quantidade 100, Decrescente
-Tempo decorrido: 0.000011
-Comparações: 5050
+Tempo decorrido: 0.000017
+Comparações: 4950
 Trocas: 50
 Médodo Seleção Direta, Quantidade 1000
-Tempo decorrido: 0.000763
-Comparações: 500500
+Tempo decorrido: 0.001223
+Comparações: 499500
 Trocas: 500
 Médodo Seleção Direta, Quantidade 10000
-Tempo decorrido: 0.073010
-Comparações: 50005000
+Tempo decorrido: 0.100805
+Comparações: 49995000
 Trocas: 5000
