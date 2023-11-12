@@ -88,7 +88,9 @@ Tempo decorrido: 0.000008
 Comparações: 480
 Trocas: 63
 Médodo Bucket Sort, Quantidade 1000
-Tempo decorrido: 0.000062cre
+Tempo decorrido: 0.000048
+Comparações: 7987
+Trocas: 511
 Médodo Bucket Sort, Quantidade 10000
 Tempo decorrido: 0.000644
 Comparações: 113631
