@@ -274,7 +274,8 @@ Trocas: 999
 Médodo Quick Sort Inicio, Quantidade 10000
 Tempo decorrido: 0.096742
 Comparações: 49995000
-Trocas: 9999crente
+Trocas: 9999
+Médodo Quick Sort Inicio, Quantidade 100, Decrescente
 Tempo decorrido: 0.000017
 Comparações: 7400
 Trocas: 2599
